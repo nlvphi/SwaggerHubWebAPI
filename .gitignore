@@ -1,0 +1,15 @@
+# Build and Release Folders
+bin/
+obj/
+
+# Other files and folders
+*.suo
+*.dbmdl
+*.ifm
+*.user
+
+.vs/
+packages/
+ClientDatabase/ClientDatabase.jfm
+CommonDatabase/CommonDatabase.jfm
+ProductionRelease/ProductionRelease.jfm
