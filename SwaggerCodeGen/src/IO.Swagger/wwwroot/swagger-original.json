@@ -1,0 +1,1431 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Appraisal Api",
+    "version" : "v1"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "paths" : {
+    "/VehicleAppraisal/AddUpdateVehicleAppraisal" : {
+      "post" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Add or update vehicle appraisal (Lastest changed by phi.nguyen)",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AppraisalRequestViewModel"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success. Return the new Vehicle Appraisal object"
+          },
+          "400" : {
+            "description" : "There is some error while processing Vehicle Appraisal. Follow message instruction for more information"
+          },
+          "404" : {
+            "description" : "Could not find the appraisal/vehicle/contact to update. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/Bureaucracies" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all bureaucracies",
+        "responses" : {
+          "200" : {
+            "description" : "List of bureaucracies",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/BureaucracySelectionViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting bureaucracies. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/Locations" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all locations",
+        "responses" : {
+          "200" : {
+            "description" : "List of locations",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/LocationSelectionViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting locations. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/Makes" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all makes",
+        "responses" : {
+          "200" : {
+            "description" : "List of makes",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/DmsMakeViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting makes. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/VehicleTypes" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all vehicle types",
+        "responses" : {
+          "200" : {
+            "description" : "List of vehicle types",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/VehicleTypeViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting vehicle types. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/VehicleFuels" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all vehicle fuels",
+        "responses" : {
+          "200" : {
+            "description" : "List of vehicle fuels",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/VehicleFuelViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting vehicle fuels. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/VehicleBodyStyles" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all vehicle body styles",
+        "responses" : {
+          "200" : {
+            "description" : "List of vehicle body styles",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/VehicleBodyStyleViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting body styles. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/ContactTitles" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all contact titles",
+        "responses" : {
+          "200" : {
+            "description" : "List of contact titles",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ContactTitleViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting contact titles. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/TaxTypes" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all tax types",
+        "responses" : {
+          "200" : {
+            "description" : "List of tax types",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/TaxTypeViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting tax types. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/OrganisationTypes" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all organisation types",
+        "responses" : {
+          "200" : {
+            "description" : "List of organisation types",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/OrganisationTypeViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting organisation types. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/Privacies" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all privacies",
+        "responses" : {
+          "200" : {
+            "description" : "List of privacies",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/PrivacyViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting privacies. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/Employees" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all employees",
+        "responses" : {
+          "200" : {
+            "description" : "List of employees",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/EmployeeViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting employees. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/ModelPricingGuides" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all model pricing guides",
+        "parameters" : [ {
+          "name" : "MakeCode",
+          "in" : "query",
+          "description" : "Code get from GET Makes API",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "Year",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "Family",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "BadgeOrVariant",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "Series",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "BodyStyle",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "Engine",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "Transmission",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "List of model pricing guides",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ModelPricingGuideResponseViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting model pricing guides. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/Families" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all families by make code",
+        "parameters" : [ {
+          "name" : "makeCode",
+          "in" : "query",
+          "description" : "Code get from GET Makes API",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "List of families",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ModelTypeViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting families. Follow message instruction for more information"
+          }
+        }
+      }
+    },
+    "/VehicleAppraisal/Models" : {
+      "get" : {
+        "tags" : [ "VehicleAppraisal" ],
+        "description" : "Get all models by make code and family",
+        "parameters" : [ {
+          "name" : "makeCode",
+          "in" : "query",
+          "description" : "Code get from GET Makes API",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "family",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "List of models",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ModelViewModel"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "There is some error while getting models. Follow message instruction for more information"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "AddressViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "StreetNo" : {
+            "maxLength" : 256,
+            "type" : "string",
+            "nullable" : true
+          },
+          "Address1" : {
+            "maxLength" : 256,
+            "type" : "string",
+            "nullable" : true
+          },
+          "Address2" : {
+            "maxLength" : 256,
+            "type" : "string",
+            "nullable" : true
+          },
+          "City" : {
+            "maxLength" : 512,
+            "type" : "string",
+            "nullable" : true
+          },
+          "PostCode" : {
+            "maxLength" : 15,
+            "type" : "string",
+            "nullable" : true
+          },
+          "State" : {
+            "maxLength" : 80,
+            "type" : "string",
+            "nullable" : true
+          },
+          "CountryCode" : {
+            "maxLength" : 3,
+            "type" : "string",
+            "description" : "Country Code in ISO 3 format",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "AppraisalRequestViewModel" : {
+        "required" : [ "ExternalAppraisalKey", "LocationId", "Vehicle" ],
+        "type" : "object",
+        "properties" : {
+          "AppraisalKey" : {
+            "type" : "integer",
+            "description" : "Appraisal key in Titan system",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "ExternalAppraisalKey" : {
+            "maxLength" : 40,
+            "minLength" : 1,
+            "type" : "string",
+            "description" : "Appraisal key in Third Party system"
+          },
+          "AppraisedDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "AppraisedNote" : {
+            "maxLength" : 4000,
+            "type" : "string",
+            "nullable" : true
+          },
+          "StockValue" : {
+            "type" : "number",
+            "description" : "Appraised value of vehicle",
+            "format" : "double",
+            "nullable" : true
+          },
+          "VehiclePricingGuideConditionCodeSourceCode" : {
+            "maximum" : 3,
+            "minimum" : 1,
+            "type" : "integer",
+            "description" : "1: Redbook, 2: Glassguide, 3: M&M",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "RegistrationExpiryDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "Odometer" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "LocationId" : {
+            "type" : "integer",
+            "description" : "Id get from GET Locations API",
+            "format" : "int32"
+          },
+          "CancellationReason" : {
+            "maxLength" : 128,
+            "type" : "string",
+            "nullable" : true
+          },
+          "OwnerCustomerKey" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Salesperson" : {
+            "maxLength" : 5,
+            "type" : "string",
+            "description" : "Employee User ID of Salesperson",
+            "nullable" : true
+          },
+          "AppraisedBy" : {
+            "maxLength" : 5,
+            "type" : "string",
+            "description" : "Employee User ID of Appraiser",
+            "nullable" : true
+          },
+          "TradeInValueTaxInclusive" : {
+            "type" : "number",
+            "description" : "Customer value of vehicle",
+            "format" : "double",
+            "nullable" : true
+          },
+          "RecommendedRetailPrice" : {
+            "type" : "number",
+            "description" : "Future sale price of vehicle",
+            "format" : "double"
+          },
+          "AppraisalStatusCode" : {
+            "type" : "integer",
+            "description" : "1: Active, 2 Inactive\r\nDefault is 1",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "AppraisalDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "EstimatedReconditionCost" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "ExpiryDate" : {
+            "type" : "string",
+            "description" : "Date when the appraisal will expire",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "CloseStatusCode" : {
+            "type" : "integer",
+            "description" : "1: Won, 2: Lost, 3: Cancelled",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Vehicle" : {
+            "$ref" : "#/components/schemas/VehicleRequestViewModel"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "BureaucracySelectionViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Name" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "Name" : "Name"
+        }
+      },
+      "ContactRequestViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "TradingEntityKey" : {
+            "type" : "integer",
+            "description" : "Contact key in Titan system",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "ExternalTradingEntityKey" : {
+            "maxLength" : 255,
+            "type" : "string",
+            "description" : "Contact key in Third Party system",
+            "nullable" : true
+          },
+          "WorkEmail" : {
+            "maxLength" : 255,
+            "type" : "string",
+            "nullable" : true
+          },
+          "Abn" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "nullable" : true
+          },
+          "Acn" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "nullable" : true
+          },
+          "CompanyName" : {
+            "maxLength" : 128,
+            "type" : "string",
+            "nullable" : true
+          },
+          "FirstName" : {
+            "maxLength" : 80,
+            "type" : "string",
+            "nullable" : true
+          },
+          "MiddleName" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "nullable" : true
+          },
+          "LastName" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "nullable" : true
+          },
+          "HomePhone" : {
+            "maxLength" : 30,
+            "type" : "string",
+            "nullable" : true
+          },
+          "Mobile" : {
+            "maxLength" : 30,
+            "type" : "string",
+            "nullable" : true
+          },
+          "Fax" : {
+            "maxLength" : 30,
+            "type" : "string",
+            "nullable" : true
+          },
+          "WorkPhone" : {
+            "maxLength" : 30,
+            "type" : "string",
+            "nullable" : true
+          },
+          "PostalAddress" : {
+            "$ref" : "#/components/schemas/AddressViewModel"
+          },
+          "StreetAddress" : {
+            "$ref" : "#/components/schemas/AddressViewModel"
+          },
+          "PrivateEmail" : {
+            "maxLength" : 255,
+            "type" : "string",
+            "nullable" : true
+          },
+          "Gender" : {
+            "maximum" : 4,
+            "minimum" : 1,
+            "type" : "integer",
+            "description" : "1: Male, 2: Female, 3: Other, 4: Unknown",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Title" : {
+            "type" : "integer",
+            "description" : "Code get from GET ContactTitles API",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "BirthDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "TaxType" : {
+            "type" : "integer",
+            "description" : "Code get from GET TaxTypes API",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "OrganisationType" : {
+            "type" : "integer",
+            "description" : "Code get from GET OrganisationTypes API",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Privacy" : {
+            "type" : "integer",
+            "description" : "Code get from GET Privacies API",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Occupation" : {
+            "maxLength" : 128,
+            "type" : "string",
+            "nullable" : true
+          },
+          "DriverLicence" : {
+            "maxLength" : 18,
+            "type" : "string",
+            "nullable" : true
+          },
+          "DriverLicenceExpiryDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "PreferredContactMethod" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ContactTitleViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Code" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "Code" : 0
+        }
+      },
+      "DmsMakeViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Code" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "Code" : 0
+        }
+      },
+      "EmployeeViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "EmpId" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Name" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "EmpId" : "EmpId",
+          "Name" : "Name"
+        }
+      },
+      "LocationSelectionViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "integer",
+            "description" : "Location Id",
+            "format" : "int32"
+          },
+          "Name" : {
+            "type" : "string",
+            "description" : "Location Name",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Id" : 0,
+          "Name" : "Name"
+        }
+      },
+      "ModelPricingGuideResponseViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "ModelPricingGuideKey" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "ModelPricingGuideCode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "DmsMakeCode" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Family" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "VehicleType" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "ManufactureYear" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "ManufactureMonth" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Series" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "BadgeDescription" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "BadgeSecondaryDescription" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Variant" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "BodyStyle" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "DriveType" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "EngineSize" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Engine" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "FuelType" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "NewPrice" : {
+            "type" : "number",
+            "format" : "double",
+            "nullable" : true
+          },
+          "ManufacturerModelCode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "ManufacturerModelSeries" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "ManufacturerEngineCode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "ManufacturerTransmissionCode" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "ManufacturerModelSeries" : "ManufacturerModelSeries",
+          "ManufacturerTransmissionCode" : "ManufacturerTransmissionCode",
+          "EngineSize" : "EngineSize",
+          "VehicleType" : 1,
+          "ManufacturerModelCode" : "ManufacturerModelCode",
+          "ModelPricingGuideKey" : 0,
+          "ManufactureYear" : 5,
+          "ManufacturerEngineCode" : "ManufacturerEngineCode",
+          "FuelType" : "FuelType",
+          "Variant" : "Variant",
+          "DriveType" : "DriveType",
+          "Series" : "Series",
+          "BadgeDescription" : "BadgeDescription",
+          "BodyStyle" : "BodyStyle",
+          "NewPrice" : 2.3021358869347655,
+          "Family" : "Family",
+          "ModelPricingGuideCode" : "ModelPricingGuideCode",
+          "DmsMakeCode" : 6,
+          "ManufactureMonth" : 5,
+          "BadgeSecondaryDescription" : "BadgeSecondaryDescription",
+          "Engine" : "Engine"
+        }
+      },
+      "ModelTypeViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "VehicleType" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Family" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "VehicleType" : 0,
+          "Family" : "Family"
+        }
+      },
+      "ModelViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "ModelId" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Badge" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Series" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "EngineCode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "TransmissionCode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "VehicleType" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "FuelCode" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "BodyStyleCode" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "NoOfDoors" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "NoOfCylinders" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "ModelYear" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "EngineCode" : "EngineCode",
+          "Series" : "Series",
+          "TransmissionCode" : "TransmissionCode",
+          "Description" : "Description",
+          "BodyStyleCode" : 1,
+          "NoOfDoors" : 5,
+          "FuelCode" : 6,
+          "VehicleType" : 0,
+          "ModelYear" : 2,
+          "Badge" : "Badge",
+          "ModelId" : "ModelId",
+          "NoOfCylinders" : 5
+        }
+      },
+      "OrganisationTypeViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Code" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "Code" : 0
+        }
+      },
+      "PrivacyViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Code" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "Code" : 0
+        }
+      },
+      "TaxTypeViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Code" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "Code" : 0
+        }
+      },
+      "VehicleBodyStyleViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Code" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "Code" : 0
+        }
+      },
+      "VehicleFuelViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Code" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "Code" : 0
+        }
+      },
+      "VehicleRequestViewModel" : {
+        "required" : [ "Owner", "RegistrationBureaucracy", "RegistrationNo" ],
+        "type" : "object",
+        "properties" : {
+          "VehicleKey" : {
+            "type" : "integer",
+            "description" : "Vehicle key in Titan system",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "ExternalVehicleKey" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "description" : "Vehicle key in Third Party system",
+            "nullable" : true
+          },
+          "MakeCode" : {
+            "type" : "integer",
+            "description" : "Code get from GET Makes API",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Vin" : {
+            "maxLength" : 17,
+            "type" : "string",
+            "nullable" : true
+          },
+          "BootKey" : {
+            "maxLength" : 10,
+            "type" : "string",
+            "nullable" : true
+          },
+          "IgnitionKey" : {
+            "maxLength" : 10,
+            "type" : "string",
+            "nullable" : true
+          },
+          "FuelCode" : {
+            "type" : "integer",
+            "description" : "Code get from GET VehicleFuels API",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "RadioCode" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "nullable" : true
+          },
+          "VehicleNote" : {
+            "maxLength" : 600,
+            "type" : "string",
+            "nullable" : true
+          },
+          "SellingDealerCode" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "nullable" : true
+          },
+          "RegistrationNo" : {
+            "maxLength" : 40,
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "ComplianceNo" : {
+            "maxLength" : 20,
+            "type" : "string",
+            "nullable" : true
+          },
+          "VehicleEngine" : {
+            "maxLength" : 128,
+            "type" : "string",
+            "nullable" : true
+          },
+          "VehicleTransmission" : {
+            "maxLength" : 128,
+            "type" : "string",
+            "nullable" : true
+          },
+          "ComplianceDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "ModelPricingGuideCode" : {
+            "type" : "string",
+            "description" : "Code get from GET ModelPricingGuideCodes API",
+            "nullable" : true
+          },
+          "DriverKey" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "ExternalDriverKey" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "nullable" : true
+          },
+          "FleetKey" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "ExternalFleetKey" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "nullable" : true
+          },
+          "VehicleDescription" : {
+            "maxLength" : 1000,
+            "type" : "string",
+            "nullable" : true
+          },
+          "ModelDescription" : {
+            "maxLength" : 1000,
+            "type" : "string",
+            "nullable" : true
+          },
+          "VehicleColour" : {
+            "maxLength" : 128,
+            "type" : "string",
+            "nullable" : true
+          },
+          "InteriorColour" : {
+            "maxLength" : 128,
+            "type" : "string",
+            "nullable" : true
+          },
+          "EngineNumber" : {
+            "maxLength" : 20,
+            "type" : "string",
+            "nullable" : true
+          },
+          "BuildDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "BodyType" : {
+            "maxLength" : 20,
+            "type" : "string",
+            "description" : "Code get from GET BodyTypes API",
+            "nullable" : true
+          },
+          "ModelID" : {
+            "type" : "string",
+            "description" : "Code get from GET Models API",
+            "nullable" : true
+          },
+          "ManufacturerId" : {
+            "maxLength" : 40,
+            "type" : "string",
+            "description" : "Manufacturer reference for the vehicle",
+            "nullable" : true
+          },
+          "ManufacturedDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "RegistrationBureaucracy" : {
+            "maxLength" : 40,
+            "minLength" : 1,
+            "type" : "string",
+            "description" : "Name get from GET Bureaucracies API"
+          },
+          "EngineCubicCapacity" : {
+            "type" : "number",
+            "format" : "double",
+            "nullable" : true
+          },
+          "RegistrationExpiryDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "StatusCode" : {
+            "type" : "integer",
+            "description" : "1: Active, 2 Inactive\r\nDefault is 1",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "GlassNvic" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Family" : {
+            "maxLength" : 128,
+            "type" : "string",
+            "description" : "Code get from GET Families API",
+            "nullable" : true
+          },
+          "VehiclePricingGuideConditionCode" : {
+            "maximum" : 6,
+            "minimum" : 1,
+            "type" : "integer",
+            "description" : "If VehiclePricingGuideConditionCodeSourceCode = 1 (Redbook) <br />\r\n1: Poor, 2: Fair, 3: Average, 4: Good, 5: Very Good, 6: As New <br />\r\nIf VehiclePricingGuideConditionCodeSourceCode = 2 (Glassguide) <br />\r\n1: Below Average, 2: Average, 3: Above Average",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "VehicleType" : {
+            "type" : "integer",
+            "description" : "Code get from GET VehicleTypes API",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Owner" : {
+            "$ref" : "#/components/schemas/ContactRequestViewModel"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "VehicleTypeViewModel" : {
+        "type" : "object",
+        "properties" : {
+          "Code" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Description" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "Description" : "Description",
+          "Code" : 0
+        }
+      }
+    }
+  }
+}
